@@ -1,0 +1,131 @@
+apiVersion: kpack.io/v1alpha2
+kind: Build
+metadata:
+  annotations:
+    image.kpack.io/buildChanges: '[{"reason":"CONFIG","old":{"resources":{},"source":{}},"new":{"env":[{"name":"BP_OCI_SOURCE","value":"main/7fce09f07e5aa0ab2cb8bfca4cc5a8401608210c"}],"resources":{},"source":{"blob":{"url":"http://source-controller.flux-system.svc.cluster.local./gitrepository/dev/tanzu-java-web-app/7fce09f07e5aa0ab2cb8bfca4cc5a8401608210c.tar.gz"}}}}]'
+    image.kpack.io/reason: CONFIG
+  creationTimestamp: "2022-02-01T12:24:58Z"
+  generation: 1
+  labels:
+    app.kubernetes.io/component: build
+    app.kubernetes.io/part-of: tanzu-java-web-app
+    carto.run/cluster-supply-chain-name: source-to-url
+    carto.run/cluster-template-name: kpack-template
+    carto.run/resource-name: image-builder
+    carto.run/template-kind: ClusterImageTemplate
+    carto.run/workload-name: tanzu-java-web-app
+    carto.run/workload-namespace: dev
+    image.kpack.io/buildNumber: "1"
+    image.kpack.io/image: tanzu-java-web-app
+    image.kpack.io/imageGeneration: "1"
+  name: tanzu-java-web-app-build-1
+  namespace: dev
+  ownerReferences:
+  - apiVersion: kpack.io/v1alpha2
+    blockOwnerDeletion: true
+    controller: true
+    kind: Image
+    name: tanzu-java-web-app
+    uid: 9e8f7e77-d4f6-4455-882e-404ed76843c9
+  resourceVersion: "9676510"
+  uid: 0caf2c36-1965-402a-a1d4-896e2c3e5155
+spec:
+  builder:
+    image: gcr.io/ship-interfaces-dev/build-service:clusterbuilder-default@sha256:bffe919ea2706cc7c27a863bc75c9982352b4f8b0af715d5823ca847ded3b15b
+  cache:
+    volume:
+      persistentVolumeClaimName: tanzu-java-web-app-cache
+  env:
+  - name: BP_OCI_SOURCE
+    value: main/7fce09f07e5aa0ab2cb8bfca4cc5a8401608210c
+  resources: {}
+  serviceAccountName: default
+  source:
+    blob:
+      url: http://source-controller.flux-system.svc.cluster.local./gitrepository/dev/tanzu-java-web-app/7fce09f07e5aa0ab2cb8bfca4cc5a8401608210c.tar.gz
+  tags:
+  - gcr.io/ship-interfaces-dev/supply-chain/tanzu-java-web-app-dev
+  - gcr.io/ship-interfaces-dev/supply-chain/tanzu-java-web-app-dev:b1.20220201.122458
+status:
+  buildMetadata:
+  - homepage: https://github.com/paketo-buildpacks/ca-certificates
+    id: paketo-buildpacks/ca-certificates
+    version: 3.0.2
+  - homepage: https://github.com/paketo-buildpacks/bellsoft-liberica
+    id: paketo-buildpacks/bellsoft-liberica
+    version: 9.0.3
+  - homepage: https://github.com/paketo-buildpacks/syft
+    id: paketo-buildpacks/syft
+    version: 1.6.0
+  - homepage: https://github.com/paketo-buildpacks/maven
+    id: paketo-buildpacks/maven
+    version: 6.1.0
+  - homepage: https://github.com/paketo-buildpacks/executable-jar
+    id: paketo-buildpacks/executable-jar
+    version: 6.0.2
+  - homepage: https://github.com/paketo-buildpacks/apache-tomcat
+    id: paketo-buildpacks/apache-tomcat
+    version: 7.0.4
+  - homepage: https://github.com/paketo-buildpacks/dist-zip
+    id: paketo-buildpacks/dist-zip
+    version: 5.0.2
+  - homepage: https://github.com/paketo-buildpacks/spring-boot
+    id: paketo-buildpacks/spring-boot
+    version: 5.3.1
+  - homepage: https://github.com/paketo-buildpacks/image-labels
+    id: paketo-buildpacks/image-labels
+    version: 4.0.2
+  conditions:
+  - lastTransitionTime: "2022-02-01T12:26:28Z"
+    status: "True"
+    type: Succeeded
+  latestImage: gcr.io/ship-interfaces-dev/supply-chain/tanzu-java-web-app-dev@sha256:e944292c7035869f28bdc2060d64f3574b109ad74f088908ff3d1c0d57f9583d
+  observedGeneration: 1
+  podName: tanzu-java-web-app-build-1-build-pod
+  stack:
+    id: io.buildpacks.stacks.bionic
+    runImage: gcr.io/ship-interfaces-dev/build-service@sha256:e0e2447f581422507ea5236732d324d0deaf719c5137ca0fe96d81bc9069b08c
+  stepStates:
+  - terminated:
+      containerID: containerd://3675910320f80a2c796c6085713eb78b7556f200bc1b97f4d4f1e63f46674463
+      exitCode: 0
+      finishedAt: "2022-02-01T12:25:20Z"
+      reason: Completed
+      startedAt: "2022-02-01T12:25:18Z"
+  - terminated:
+      containerID: containerd://f232ae285f8ab8e087bcbcc444dbddd8dec326809f5198385178bf9c8da88dfa
+      exitCode: 0
+      finishedAt: "2022-02-01T12:25:23Z"
+      reason: Completed
+      startedAt: "2022-02-01T12:25:21Z"
+  - terminated:
+      containerID: containerd://ecc95b9cfec6d66fb5626a55ab52fc14e7bcc4d874102e4bae94246437ad7f38
+      exitCode: 0
+      finishedAt: "2022-02-01T12:25:41Z"
+      reason: Completed
+      startedAt: "2022-02-01T12:25:24Z"
+  - terminated:
+      containerID: containerd://ea6705e339b9464d4362fe3c2540bdfa8bc8c00b4ab4ac7618b9cc708874e8c6
+      exitCode: 0
+      finishedAt: "2022-02-01T12:25:42Z"
+      reason: Completed
+      startedAt: "2022-02-01T12:25:42Z"
+  - terminated:
+      containerID: containerd://af27d564ff1232032229ea797be6611a5d8792f7a57c89a6531aa80d97023d33
+      exitCode: 0
+      finishedAt: "2022-02-01T12:26:17Z"
+      reason: Completed
+      startedAt: "2022-02-01T12:25:43Z"
+  - terminated:
+      containerID: containerd://7bdbc28f0b2b6a851323cd3d1ac03190edeed8085858ff49e15cc6aba7ed4a77
+      exitCode: 0
+      finishedAt: "2022-02-01T12:26:26Z"
+      reason: Completed
+      startedAt: "2022-02-01T12:26:18Z"
+  stepsCompleted:
+  - prepare
+  - analyze
+  - detect
+  - restore
+  - build
+  - export
