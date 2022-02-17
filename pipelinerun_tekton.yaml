@@ -1,0 +1,115 @@
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    kapp.k14s.io/identity: v1;/apiextensions.k8s.io/CustomResourceDefinition/pipelineruns.tekton.dev;apiextensions.k8s.io/v1
+    kapp.k14s.io/original: '{"apiVersion":"apiextensions.k8s.io/v1","kind":"CustomResourceDefinition","metadata":{"labels":{"app.kubernetes.io/instance":"default","app.kubernetes.io/part-of":"tekton-pipelines","kapp.k14s.io/app":"1643567216747216919","kapp.k14s.io/association":"v1.a6bf423b83452174b3547bdebcbfdaec","pipeline.tekton.dev/release":"v0.30.0","version":"v0.30.0"},"name":"pipelineruns.tekton.dev"},"spec":{"conversion":{"strategy":"Webhook","webhook":{"clientConfig":{"service":{"name":"tekton-pipelines-webhook","namespace":"tekton-pipelines"}},"conversionReviewVersions":["v1beta1"]}},"group":"tekton.dev","names":{"categories":["tekton","tekton-pipelines"],"kind":"PipelineRun","plural":"pipelineruns","shortNames":["pr","prs"]},"preserveUnknownFields":false,"scope":"Namespaced","versions":[{"additionalPrinterColumns":[{"jsonPath":".status.conditions[?(@.type==\"Succeeded\")].status","name":"Succeeded","type":"string"},{"jsonPath":".status.conditions[?(@.type==\"Succeeded\")].reason","name":"Reason","type":"string"},{"jsonPath":".status.startTime","name":"StartTime","type":"date"},{"jsonPath":".status.completionTime","name":"CompletionTime","type":"date"}],"name":"v1alpha1","schema":{"openAPIV3Schema":{"type":"object","x-kubernetes-preserve-unknown-fields":true}},"served":true,"storage":false,"subresources":{"status":{}}},{"additionalPrinterColumns":[{"jsonPath":".status.conditions[?(@.type==\"Succeeded\")].status","name":"Succeeded","type":"string"},{"jsonPath":".status.conditions[?(@.type==\"Succeeded\")].reason","name":"Reason","type":"string"},{"jsonPath":".status.startTime","name":"StartTime","type":"date"},{"jsonPath":".status.completionTime","name":"CompletionTime","type":"date"}],"name":"v1beta1","schema":{"openAPIV3Schema":{"type":"object","x-kubernetes-preserve-unknown-fields":true}},"served":true,"storage":true,"subresources":{"status":{}}}]}}'
+    kapp.k14s.io/original-diff-md5: 2ad46ad20a8e91463c2ba91216370bb9
+  creationTimestamp: "2022-01-30T18:27:01Z"
+  generation: 5052
+  labels:
+    app.kubernetes.io/instance: default
+    app.kubernetes.io/part-of: tekton-pipelines
+    kapp.k14s.io/app: "1643567216747216919"
+    kapp.k14s.io/association: v1.a6bf423b83452174b3547bdebcbfdaec
+    pipeline.tekton.dev/release: v0.30.0
+    version: v0.30.0
+  name: pipelineruns.tekton.dev
+  resourceVersion: "100802015"
+  uid: 12a9d4d5-abbe-4726-8b7d-0c2c05e5369c
+spec:
+  conversion:
+    strategy: Webhook
+    webhook:
+      clientConfig:
+        caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUN2ekNDQW1TZ0F3SUJBZ0lRSFNLL2hvZjNROW5uc2psMndVbHhtekFLQmdncWhrak9QUVFEQWpCT01SUXcKRWdZRFZRUUtFd3RyYm1GMGFYWmxMbVJsZGpFMk1EUUdBMVVFQXhNdGRHVnJkRzl1TFhCcGNHVnNhVzVsY3kxMwpaV0pvYjI5ckxuUmxhM1J2Ymkxd2FYQmxiR2x1WlhNdWMzWmpNQjRYRFRJeU1ESXhOekl3TVRJek9Gb1hEVEl5Ck1ESXlOREl3TVRJek9Gb3dUakVVTUJJR0ExVUVDaE1MYTI1aGRHbDJaUzVrWlhZeE5qQTBCZ05WQkFNVExYUmwKYTNSdmJpMXdhWEJsYkdsdVpYTXRkMlZpYUc5dmF5NTBaV3QwYjI0dGNHbHdaV3hwYm1WekxuTjJZekJaTUJNRwpCeXFHU000OUFnRUdDQ3FHU000OUF3RUhBMElBQlB6OE1wWFNmZThScVJ6eW1DMW5mV21TZTY5RTFCeWFtV3AxClBLWWtoVU5kbnNiZnE5ZlZ5azRYdWVOMlhQSUlXbTYwaWFJdnlyMVd1ZzhMQS9OQkRiZWpnZ0VpTUlJQkhqQU8KQmdOVkhROEJBZjhFQkFNQ0FvUXdIUVlEVlIwbEJCWXdGQVlJS3dZQkJRVUhBd0VHQ0NzR0FRVUZCd01DTUE4RwpBMVVkRXdFQi93UUZNQU1CQWY4d0hRWURWUjBPQkJZRUZNY0NkUjZuNkdFYmZjeG00aWFydkVXWjl4UzVNSUc4CkJnTlZIUkVFZ2JRd2diR0NHSFJsYTNSdmJpMXdhWEJsYkdsdVpYTXRkMlZpYUc5dmE0SXBkR1ZyZEc5dUxYQnAKY0dWc2FXNWxjeTEzWldKb2IyOXJMblJsYTNSdmJpMXdhWEJsYkdsdVpYT0NMWFJsYTNSdmJpMXdhWEJsYkdsdQpaWE10ZDJWaWFHOXZheTUwWld0MGIyNHRjR2x3Wld4cGJtVnpMbk4yWTRJN2RHVnJkRzl1TFhCcGNHVnNhVzVsCmN5MTNaV0pvYjI5ckxuUmxhM1J2Ymkxd2FYQmxiR2x1WlhNdWMzWmpMbU5zZFhOMFpYSXViRzlqWVd3d0NnWUkKS29aSXpqMEVBd0lEU1FBd1JnSWhBTzJIdS9FMkRseXpRd0pUUzB2ZWJ1aXh5eURqN0lhbXppOHF6akh4Z3g0cwpBaUVBMmQzQlRYRXJEUlhjN2pMa0FuUmpaNkVvdFVjb2pXY2FidVJhcDJoMW1KVT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
+        service:
+          name: tekton-pipelines-webhook
+          namespace: tekton-pipelines
+          path: /resource-conversion
+          port: 443
+      conversionReviewVersions:
+      - v1beta1
+  group: tekton.dev
+  names:
+    categories:
+    - tekton
+    - tekton-pipelines
+    kind: PipelineRun
+    listKind: PipelineRunList
+    plural: pipelineruns
+    shortNames:
+    - pr
+    - prs
+    singular: pipelinerun
+  scope: Namespaced
+  versions:
+  - additionalPrinterColumns:
+    - jsonPath: .status.conditions[?(@.type=="Succeeded")].status
+      name: Succeeded
+      type: string
+    - jsonPath: .status.conditions[?(@.type=="Succeeded")].reason
+      name: Reason
+      type: string
+    - jsonPath: .status.startTime
+      name: StartTime
+      type: date
+    - jsonPath: .status.completionTime
+      name: CompletionTime
+      type: date
+    name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        type: object
+        x-kubernetes-preserve-unknown-fields: true
+    served: true
+    storage: false
+    subresources:
+      status: {}
+  - additionalPrinterColumns:
+    - jsonPath: .status.conditions[?(@.type=="Succeeded")].status
+      name: Succeeded
+      type: string
+    - jsonPath: .status.conditions[?(@.type=="Succeeded")].reason
+      name: Reason
+      type: string
+    - jsonPath: .status.startTime
+      name: StartTime
+      type: date
+    - jsonPath: .status.completionTime
+      name: CompletionTime
+      type: date
+    name: v1beta1
+    schema:
+      openAPIV3Schema:
+        type: object
+        x-kubernetes-preserve-unknown-fields: true
+    served: true
+    storage: true
+    subresources:
+      status: {}
+status:
+  acceptedNames:
+    categories:
+    - tekton
+    - tekton-pipelines
+    kind: PipelineRun
+    listKind: PipelineRunList
+    plural: pipelineruns
+    shortNames:
+    - pr
+    - prs
+    singular: pipelinerun
+  conditions:
+  - lastTransitionTime: "2022-01-30T18:27:03Z"
+    message: no conflicts found
+    reason: NoConflicts
+    status: "True"
+    type: NamesAccepted
+  - lastTransitionTime: "2022-01-30T18:27:04Z"
+    message: the initial names have been accepted
+    reason: InitialNamesAccepted
+    status: "True"
+    type: Established
+  storedVersions:
+  - v1beta1
