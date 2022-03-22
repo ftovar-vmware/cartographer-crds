@@ -1,0 +1,90 @@
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.4.1
+    kapp.k14s.io/identity: v1;/apiextensions.k8s.io/CustomResourceDefinition/scanpolicies.scanning.apps.tanzu.vmware.com;apiextensions.k8s.io/v1
+    kapp.k14s.io/original: '{"apiVersion":"apiextensions.k8s.io/v1","kind":"CustomResourceDefinition","metadata":{"annotations":{"controller-gen.kubebuilder.io/version":"v0.4.1"},"creationTimestamp":null,"labels":{"kapp.k14s.io/app":"1646918451502363034","kapp.k14s.io/association":"v1.cfda25a1b17e29d8fcde5146159c791a"},"name":"scanpolicies.scanning.apps.tanzu.vmware.com"},"spec":{"group":"scanning.apps.tanzu.vmware.com","names":{"kind":"ScanPolicy","listKind":"ScanPolicyList","plural":"scanpolicies","singular":"scanpolicy"},"scope":"Namespaced","versions":[{"name":"v1alpha1","schema":{"openAPIV3Schema":{"properties":{"apiVersion":{"type":"string"},"kind":{"type":"string"},"metadata":{"type":"object"},"spec":{"properties":{"regoFile":{"type":"string"}},"type":"object"},"status":{"type":"object"}},"type":"object"}},"served":true,"storage":false,"subresources":{"status":{}}},{"name":"v1beta1","schema":{"openAPIV3Schema":{"properties":{"apiVersion":{"type":"string"},"kind":{"type":"string"},"metadata":{"type":"object"},"spec":{"properties":{"regoFile":{"type":"string"}},"type":"object"},"status":{"type":"object"}},"type":"object"}},"served":true,"storage":true,"subresources":{"status":{}}}]}}'
+    kapp.k14s.io/original-diff-md5: f39d49adb22519ee68d3920577e584c0
+  creationTimestamp: "2022-03-10T13:21:20Z"
+  generation: 1
+  labels:
+    kapp.k14s.io/app: "1646918451502363034"
+    kapp.k14s.io/association: v1.cfda25a1b17e29d8fcde5146159c791a
+  name: scanpolicies.scanning.apps.tanzu.vmware.com
+  resourceVersion: "44915"
+  uid: b2677135-f03f-4056-ad0c-9d54018b5d6f
+spec:
+  conversion:
+    strategy: None
+  group: scanning.apps.tanzu.vmware.com
+  names:
+    kind: ScanPolicy
+    listKind: ScanPolicyList
+    plural: scanpolicies
+    singular: scanpolicy
+  scope: Namespaced
+  versions:
+  - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        properties:
+          apiVersion:
+            type: string
+          kind:
+            type: string
+          metadata:
+            type: object
+          spec:
+            properties:
+              regoFile:
+                type: string
+            type: object
+          status:
+            type: object
+        type: object
+    served: true
+    storage: false
+    subresources:
+      status: {}
+  - name: v1beta1
+    schema:
+      openAPIV3Schema:
+        properties:
+          apiVersion:
+            type: string
+          kind:
+            type: string
+          metadata:
+            type: object
+          spec:
+            properties:
+              regoFile:
+                type: string
+            type: object
+          status:
+            type: object
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
+status:
+  acceptedNames:
+    kind: ScanPolicy
+    listKind: ScanPolicyList
+    plural: scanpolicies
+    singular: scanpolicy
+  conditions:
+  - lastTransitionTime: "2022-03-10T13:21:20Z"
+    message: no conflicts found
+    reason: NoConflicts
+    status: "True"
+    type: NamesAccepted
+  - lastTransitionTime: "2022-03-10T13:21:21Z"
+    message: the initial names have been accepted
+    reason: InitialNamesAccepted
+    status: "True"
+    type: Established
+  storedVersions:
+  - v1beta1
